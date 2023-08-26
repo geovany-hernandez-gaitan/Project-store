@@ -1,5 +1,6 @@
 import {
   Column,
+  CreateDateColumn,
   Entity,
   JoinColumn,
   ManyToOne,
@@ -25,11 +26,24 @@ export class Product {
   stock: number;
 
   @Column({ type: 'int4', nullable: false })
-  user_id: number;
+  private _user_id: number;
+  public get user_id(): number {
+    return this._user_id;
+  }
+  public set user_id(value: number) {
+    this._user_id = value;
+  }
 
-  @Column({ type: 'current_timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  //@Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  //created_at: Date;
+
+  @Column({ type: 'varchar', nullable: true})
+  filename: string;
+
+  @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 
+  
   //Relaciones
   @ManyToOne(() => User)
   @JoinColumn({
