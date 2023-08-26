@@ -1,4 +1,8 @@
 import {
+<<<<<<< HEAD
+=======
+  IsDate,
+>>>>>>> c0fc9c5c4be05aac411a4a4fb88e0cee7b3ab454
   IsDateString,
   IsNotEmpty,
   IsNumber,
@@ -42,5 +46,8 @@ export class CreateProductDto {
   @IsDateString()
   @IsOptional()
   created_at: string;
+<<<<<<< HEAD
 
+=======
+>>>>>>> c0fc9c5c4be05aac411a4a4fb88e0cee7b3ab454
 }

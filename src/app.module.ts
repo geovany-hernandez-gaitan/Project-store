@@ -6,7 +6,10 @@ import { ProductsModule } from './products/products.module';
 import { UsersModule } from './users/users.module';
 import { MarcasModule } from './marcas/marcas.module';
 import { FilesModule } from './files/files.module';
+<<<<<<< HEAD
 import { CategoriaModule } from './categoria/categoria.module';
+=======
+>>>>>>> c0fc9c5c4be05aac411a4a4fb88e0cee7b3ab454
 
 @Module({
   imports: [
@@ -24,7 +27,10 @@ import { CategoriaModule } from './categoria/categoria.module';
     UsersModule,
     MarcasModule,
     FilesModule,
+<<<<<<< HEAD
     CategoriaModule,
+=======
+>>>>>>> c0fc9c5c4be05aac411a4a4fb88e0cee7b3ab454
   ],
   controllers: [AppController],
   providers: [AppService],

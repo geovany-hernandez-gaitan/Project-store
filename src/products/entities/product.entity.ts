@@ -34,10 +34,14 @@ export class Product {
     this._user_id = value;
   }
 
+<<<<<<< HEAD
   //@Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   //created_at: Date;
 
   @Column({ type: 'varchar', nullable: true})
+=======
+  @Column({ type: 'varchar', nullable: true })
+>>>>>>> c0fc9c5c4be05aac411a4a4fb88e0cee7b3ab454
   filename: string;
 
   @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
