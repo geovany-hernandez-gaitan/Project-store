@@ -6,8 +6,11 @@ import { ProductsModule } from './products/products.module';
 import { UsersModule } from './users/users.module';
 import { MarcasModule } from './marcas/marcas.module';
 import { FilesModule } from './files/files.module';
-import { CategoriaModule } from './categoria/categoria.module';
+ 
 import { ProveedorModule } from './proveedor/proveedor.module';
+import { CategoriaModule } from './categoria/categoria.module';
+import { FilespdfModule } from './filespdf/filespdf.module';
+
 
 @Module({
   imports: [
@@ -25,11 +28,9 @@ import { ProveedorModule } from './proveedor/proveedor.module';
     UsersModule,
     MarcasModule,
     FilesModule,
-    CategoriaModule,
     ProveedorModule,
-    
-
-
+    CategoriaModule,
+    FilespdfModule,
   ],
   controllers: [AppController],
   providers: [AppService],
