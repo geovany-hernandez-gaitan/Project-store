@@ -4,12 +4,14 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
 import { User } from '../../users/entities/user.entity';
 import { Categoria } from 'src/categoria/entities/categoria.entity';
 import { Proveedor } from 'src/proveedor/entities/proveedor.entity';
+import { ProductImage } from './product-image.entity';
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn({ type: 'int4' })
@@ -27,7 +29,7 @@ export class Product {
   @Column({ type: 'int8', nullable: false })
   stock: number;
 
-  @Column({ type: 'int4', nullable: false })
+  @Column({ type: 'int4', nullable: true })
   private _user_id: number;
   public get user_id(): number {
     return this._user_id;
@@ -55,6 +57,11 @@ export class Product {
     referencedColumnName: 'id', //este es el id del usuario
   })
   autor: User;
+
+  @OneToMany(() => ProductImage, (productImage) => productImage.product, {
+    cascade: true
+  })
+  images?: ProductImage[];
 
   @ManyToOne(() => Categoria )
   @JoinColumn({

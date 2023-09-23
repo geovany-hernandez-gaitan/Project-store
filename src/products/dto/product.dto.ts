@@ -1,5 +1,6 @@
 import {
 
+  IsArray,
   IsDate,
 
   IsDateString,
@@ -45,5 +46,10 @@ export class CreateProductDto {
   @IsDateString()
   @IsOptional()
   created_at: string;
+
+  @IsArray({ each: true})
+  @IsString()
+  @IsOptional()
+  images?: string[];
 
 }
