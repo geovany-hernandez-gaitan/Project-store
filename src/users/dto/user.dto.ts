@@ -33,4 +33,7 @@ export class CreateUserDto {
   @IsBoolean()
   @IsOptional()
   active: boolean;
+
+  images?: string[];
+
 }
